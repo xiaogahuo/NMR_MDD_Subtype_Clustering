@@ -1,0 +1,323 @@
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/GCST90029070_buildGRCh37.tsv.gz.txt" \
+    --N 575531 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/CRP"
+
+ /home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/facialpain2_f6159_v3.bgenie.txt.gz.txt" \
+    --N 151922 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/facialpain2" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/neckshoulderpain2_f6159_v3.bgeniemodify.txt.gz.txt" \
+    --N 203306 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/neckshoulderpain2" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/GCST90225528_buildGRCh37.tsv.txt" \
+    --N 21606 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/GCST90225528" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/GCST90042788_buildGRCh37.tsv.gz.txt" \
+    --N 61542 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/GCST90042788"
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/abdominalpain2_f6159_v3.bgenie.txt.gz.txt" \
+    --N 157529 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/abdominalpain2"
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/GCST90042782_buildGRCh37.tsv.gz.txt" \
+    --N 41009 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/GCST90042782"
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/painalloverbody_f6159_v3.bgenie.txt.gz.txt" \
+    --N 154982 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/painalloverbody"
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/hippain2_f6159_v3.bgenie.txt.gz.txt" \
+    --N 159428 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/hippain2"
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/kneepain2_f6159_v3_1812.bgenie.txt.gz.txt" \
+    --N 171516 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/kneepain2"
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/GCST90104898_buildGRCh37.tsv.txt" \
+    --N 311126 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/GCST90104898"
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/backpain2_f6159.2018-02-09.bgenie.gz.txt" \
+    --N 193303 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/backpain2"
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/headache2_f6159_WhiteBritishPCs_addPrunedRels_noPGC_noGenScot_v2.2017-08-30.bgenie.gz.txt" \
+    --N 224073 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/headache2"
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/IL5.data.gz.txt" \
+    --N 3364 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/IL5" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/SCGFb.data.gz.txt" \
+    --N 3682 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/SCGFb" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/CTACK.data.gz.txt" \
+    --N 3631 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/CTACK" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/FGFBasic.data.gz.txt" \
+    --N 7565 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/FGFBasic" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/bNGF.data.gz.txt" \
+    --N 3531 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/bNGF" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/SDF1a.data.gz.txt" \
+    --N 5998 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/SDF1a" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/HGF.data.gz.txt" \
+    --N 8292 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/HGF"
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/MCSF.data.gz.txt" \
+    --N 840 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/MCSF" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/VEGF.data.gz.txt" \
+    --N 7118 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/VEGF"
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/IL17.data.gz.txt" \
+    --N 7760 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/IL17" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/MCP1.data.gz.txt" \
+    --N 8293 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/MCP1"
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/MIP1a.data.gz.txt" \
+    --N 3522 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/MIP1a" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/TNFb.data.gz.txt" \
+    --N 1559 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/TNFb" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/IL2.data.gz.txt" \
+    --N 3475 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/IL2"
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/IFNg.data.gz.txt" \
+    --N 7701 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/IFNg" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/IL13.data.gz.txt" \
+    --N 3557 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/IL13" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/MIP1b.data.gz.txt" \
+    --N 8243 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/MIP1b" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/Eotaxin.data.gz.txt" \
+    --N 8153 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/Eotaxin" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/IL2ra.data.gz.txt" \
+    --N 3677 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/IL2ra" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/SCF.data.gz.txt" \
+    --N 8290 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/SCF" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/MIG.data.gz.txt" \
+    --N 3685 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/MIG" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/TNFa.data.gz.txt" \
+    --N 3454 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/TNFa" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/IL7.data.gz.txt" \
+    --N 3409 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/IL7"
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/MIF.data.gz.txt" \
+    --N 3494 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/MIF"
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/IL4.data.gz.txt" \
+    --N 8124 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/IL4" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/RANTES.data.gz.txt" \
+    --N 3421 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/RANTES" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/MCP3.data.gz.txt" \
+    --N 843 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/MCP3" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/IL8.data.gz.txt" \
+    --N 3526 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/IL8" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/GROa.data.gz.txt" \
+    --N 3505 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/GROa" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/IL12p70.data.gz.txt" \
+    --N 8270 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/IL12p70" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/IP10.data.gz.txt" \
+    --N 3685 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/IP10" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/IL9.data.gz.txt" \
+    --N 3634 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/IL9"
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/GCSF.data.gz.txt" \
+    --N 7904 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/GCSF" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/TRAIL.data.gz.txt" \
+    --N 8186 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/TRAIL" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/IL1ra.data.gz.txt" \
+    --N 3638 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/IL1ra" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/IL6.data.gz.txt" \
+    --N 8189 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/IL6" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/IL1b.data.gz.txt" \
+    --N 3309 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/IL1b" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/IL18.data.gz.txt" \
+    --N 3636 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/IL18" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/IL16.data.gz.txt" \
+    --N 3483 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/IL16" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/IL10.data.gz.txt" \
+    --N 7681 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/IL10" 
+
+/home/user/ldsc/munge_sumstats.py \
+    --sumstats "/data/UKBioBank/LDScore_EUR/Format_GWAS_Summary_Data/PDGFbb.data.gz.txt" \
+    --N 8293 \
+    --merge-alleles "/data/UKBioBank/LDScore_EUR/w_hm3.snplist" \
+    --out "/data/UKBioBank/LDScore_EUR/sumstats_ALL/PDGFbb" 
