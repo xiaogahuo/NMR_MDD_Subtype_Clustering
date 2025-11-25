@@ -99,15 +99,15 @@ def social_stats(exps, cmp_col):  # 'MDD'
     for exp in exps:
         df = pd.read_csv(data_path + exp + '.csv')
         print('---------------exp: {}, number: {}------------------------'.format(exp, df.shape[0]))
-        for col in cat_cols+[cmp_col]:
+        for col in ['immune_mediated_cate', 'Metabolic_cate', 'antidepressant', 'antipsychotics']+cat_cols+[cmp_col]:
             count_1feature(col, df)
-        for col in conti_cols:
+        for col in ['immune_mediated_diseases_num', 'Metabolic_diseases_num']+conti_cols:
             count_mean_std(col, df)
 
-        for col in cat_cols:
+        for col in ['immune_mediated_cate', 'Metabolic_cate', 'antidepressant', 'antipsychotics']+cat_cols:
             count_2features(col, cmp_col, df)
             count_Chi2(col, cmp_col, df)
-        for col in conti_cols:
+        for col in ['immune_mediated_diseases_num', 'Metabolic_diseases_num']+conti_cols:
             count_mean_std_group_by_div_feature(col, cmp_col, df)
             kwtest(col, cmp_col, df)
 

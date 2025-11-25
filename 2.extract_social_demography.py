@@ -202,7 +202,7 @@ def get_preprocess_data():
     # df['survival_time']=df.apply(lambda x:survival_time(x),axis=1)
     # df.to_csv(path+"Social_MDD_format_new.csv", index=None)
     df.to_csv(path+"Social_MDD_format.csv", index=None)
-    df = df[['eid', 'MDD', 'Btime', 'PHQ', 'PHQ_Total']+covr_cols+cate100042_cols+cate100057_cols+cate100060_cols+cate100061_cols+cate100065_cols+cate17518_cols+cate145_cols]
+    df = df[['eid', 'MDD', 'Btime', 'PHQ', 'PHQ_Total', 'immune_mediated_diseases_num', 'Metabolic_diseases_num', 'immune_mediated_cate', 'Metabolic_cate', 'antidepressant', 'antipsychotics']+covr_cols+cate100042_cols+cate100057_cols+cate100060_cols+cate100061_cols+cate100065_cols+cate17518_cols+cate145_cols]
     # df = df[['eid', 'MDD', 'Btime', 'PHQ','PHQ_Total','survival_time'] + covr_cols + cate100042_cols + cate100057_cols + cate100060_cols + cate100061_cols + cate100065_cols + cate17518_cols + cate145_cols]
     df_220 = pd.read_csv(path + "Cate_220_filtered.csv")
     df_220.rename(columns=dict(zip(raw_NMR_cols, NMR_cols)), inplace=True)
@@ -221,27 +221,67 @@ def get_preprocess_data():
     df_220.fillna(0, inplace=True)  # 空值补零- 即均值
 
     df = pd.merge(df, df_220, how='inner', on='eid', sort=True, suffixes=('_x', '_y'), copy=True, indicator=False)
-    # df.to_csv(data_path + "ALL_new.csv", index=None)
     df.to_csv(data_path + "ALL.csv", index=None)
 
     df_diag = df[((df['Btime'] == 1) & (df['PHQ'] >= 2)) | ((df['Btime'] == 0) & (df['PHQ'] < 2))]
     df_diag.to_csv(data_path + "Diag.csv", index=None)
-    # df_diag.to_csv(data_path + "Diag_new.csv", index=None)
     print("df_diag: {},".format(df_diag.groupby('MDD').size()))
+
+    df_immune_mediated = df_diag[df_diag['immune_mediated_diseases_num'] == 0]
+    df_immune_mediated.to_csv(data_path + "Diag_immune_mediated.csv", index=None)
+
+    df_Metabolic = df_diag[df_diag['Metabolic_diseases_num'] == 0]
+    df_Metabolic.to_csv(data_path + "Diag_Metabolic.csv", index=None)
+
+    df_drug = df_diag[df_diag['Drug'] != 'Drug_Yes']
+    df_drug.to_csv(data_path + "Diag_Drug_excluded.csv", index=None)
+
+    df_3excluded = df_diag[(df_diag['Metabolic_diseases_num'] == 0) & (df_diag['immune_mediated_diseases_num'] == 0) & (df_diag['Drug'] != 'Drug_Yes')]
+    df_3excluded.to_csv(data_path + "Diag_3excluded.csv", index=None)
+
 
     df_MDD, df_NC = df_diag[df_diag['MDD'] == MDD], df_diag[df_diag['MDD'] == NC]
     df_MDD.to_csv(data_path + "{}_MDD.csv".format("Diag"), index=None)
     df_NC.to_csv(data_path + "{}_NC.csv".format("Diag"), index=None)
-    # df_MDD.to_csv(data_path + "{}_MDD_new.csv".format("Diag"), index=None)
-    # df_NC.to_csv(data_path + "{}_NC_new.csv".format("Diag"), index=None)
+
+    df_MDD_immune_mediated, df_NC_immune_mediated = df_immune_mediated[df_immune_mediated['MDD'] == MDD], df_immune_mediated[df_immune_mediated['MDD'] == NC]
+    df_MDD_immune_mediated.to_csv(data_path + "{}_MDD.csv".format("Diag_immune_mediated"), index=None)
+    df_NC_immune_mediated.to_csv(data_path + "{}_NC.csv".format("Diag_immune_mediated"), index=None)
+
+    df_MDD_Metabolic, df_NC_Metabolic = df_Metabolic[df_Metabolic['MDD'] == MDD], df_Metabolic[df_Metabolic['MDD'] == NC]
+    df_MDD_Metabolic.to_csv(data_path + "{}_MDD.csv".format("Diag_Metabolic"), index=None)
+    df_NC_Metabolic.to_csv(data_path + "{}_NC.csv".format("Diag_Metabolic"), index=None)
+
+    df_MDD_Drug, df_NC_Drug = df_drug[df_drug['MDD'] == MDD], df_drug[df_drug['MDD'] == NC]
+    df_MDD_Drug.to_csv(data_path + "{}_MDD.csv".format("Diag_Drug_excluded"), index=None)
+    df_NC_Drug.to_csv(data_path + "{}_NC.csv".format("Diag_Drug_excluded"), index=None)
+
+    df_MDD_3excluded, df_NC_3excluded = df_3excluded[df_3excluded['MDD'] == MDD], df_3excluded[df_3excluded['MDD'] == NC]
+    df_MDD_3excluded.to_csv(data_path + "{}_MDD.csv".format("Diag_3excluded"), index=None)
+    df_NC_3excluded.to_csv(data_path + "{}_NC.csv".format("Diag_3excluded"), index=None)
 
 
 if __name__ == '__main__':
     get_preprocess_data()
 
-    # # # 4. 社会人口学数据统计
-    # exps = ['Diag']
-    # social_stats(exps, 'MDD')
+    # # 4. 社会人口学数据统计
+    exps = ['Diag']
+    social_stats(exps, 'MDD')
+
+    # df_diag = pd.read_csv(data_path + "Diag.csv")
+    # df_drug = df_diag[df_diag['Drug'] != 'Drug_Yes']
+    # df_drug.to_csv(data_path + "Diag_Drug_excluded.csv", index=None)
+    # df_MDD_Drug, df_NC_Drug = df_drug[df_drug['MDD'] == MDD], df_drug[df_drug['MDD'] == NC]
+    # df_MDD_Drug.to_csv(data_path + "{}_MDD.csv".format("Diag_Drug_excluded"), index=None)
+    # df_NC_Drug.to_csv(data_path + "{}_NC.csv".format("Diag_Drug_excluded"), index=None)
+
+    # df_MDD = pd.read_csv(data_path + "Diag_MDD.csv", usecols=['eid', 'MDD'])
+    # df_ICD = pd.read_csv(data_path + "ICD_Cate/" + "ICD.csv", usecols=['eid', 'ICD'])
+    # df_Self_Report = pd.read_csv(data_path + "Self_report_diagnosis/" + "Self_report_diagnosis.csv", usecols=['eid', 't_1286'])
+    # df = reduce(lambda left, right: pd.merge(left, right, on=['eid'], how='inner'), [df_MDD, df_ICD, df_Self_Report])
+    # print(df.groupby('ICD').size())
+    # print(df.groupby('t_1286').size())
+    # print(df.groupby(['ICD', 't_1286']).size())
 
 
 

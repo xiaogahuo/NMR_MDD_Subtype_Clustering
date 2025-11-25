@@ -15,19 +15,25 @@ code_ICD10_I = ['I60', 'I61', 'I62', 'I63', 'I64', 'I67']
 ICD_exclude_code = code_ICD10_F + code_ICD10_G + code_ICD10_I
 chronic_code_ICD10 = ['I10', 'I11', 'I12', 'I13', 'I14', 'I15', 'I20', 'I21', 'I22', 'I23', 'I24', 'I25', 'E10', 'E11']
 
+immune_mediated_diseases_ICD10 = ['J45', 'J46', 'M05', 'M06', 'M08', 'K51','E10',
+                                  'I00','I01','I02', 'I05','I06','I07','I08','I09',
+                                  'L40','K90.0','K50','M35.3','G35','J301', 'J302', 'J303', 'J304',
+                                  'M79.0', 'M07','E05.0', 'E06.3','M45','M31','D86','L43',
+                                  'M35.0','L93', 'M32','D69.3','K74.3','M60','G61.0',
+                                   'G70.0','L10', 'L11', 'L12', 'L13', 'L14', 'K75.4']
 
-def ICD_exclude(row):
-    diag_lst = row[diagnosis_ICD].tolist()
-    diag_lst = [x for x in diag_lst if not pd.isna(x)]
-    exclude_num = startCnt(ICD_exclude_code, diag_lst)
-    return exclude_num
+Metabolic_diseases_ICD10 = ['C', 'D', 'E', 'I10', 'I11', 'I12', 'I13', 'I15',
+                            'I20', 'I21', 'I22', 'I23', 'I24', 'I25',
+                            'N17', 'N18', 'N19', 'M80', 'M81', 'M82', 'M83', 'M84', 'M85',
+                            'K70', 'K71', 'K72', 'K73', 'K74', 'K75', 'K76', 'K77',
+                            'M10']
 
 
-def cnt_chronic_diseases(x):
+def cnt_diseases_nums(x, ICD_list):
     # print(x[diagnosis_ICD].tolist())
     result = [str(elem) if not pd.isna(elem) else None for elem in x[diagnosis_ICD].tolist()]
     result = list(filter(None, result))
-    chronic_num = startCnt(chronic_code_ICD10, result)
+    chronic_num = startCnt(ICD_list, result)
     # print("ICD_disease: {}, chronic_num: {}".format(result, chronic_num))
     # return result, chronic_num
     return chronic_num
@@ -105,19 +111,24 @@ def format_MDD():
         lst.append(chunk)
     df = pd.concat(lst, ignore_index=True)
     print('df : {}'.format(df.groupby('MDD').size()))
-    df['ICD_exclude'] = df.apply(lambda row: ICD_exclude(row), axis=1)
+    df['ICD_exclude'] = df.apply(lambda x: cnt_diseases_nums(x, ICD_exclude_code), axis=1)
     df = df[(df['ICD_exclude'] == 0) & (df['cancer_gotten'] == 0)]
     print("df after exclude ICD & cancer:  {}".format(df.groupby('MDD').size()))
     df["Btime"] = df.apply(lambda row: base_time(row), axis=1)
     print("df Basetime: {}".format(df.groupby('Btime').size()))
-    chronic_num = df.apply(lambda x: cnt_chronic_diseases(x), axis=1)
+    df['chronic_num'] = df.apply(lambda x: cnt_diseases_nums(x, chronic_code_ICD10), axis=1)
+    df['immune_mediated_diseases_num'] = df.apply(lambda x: cnt_diseases_nums(x, immune_mediated_diseases_ICD10), axis=1)
+    df['immune_mediated_cate'] = df['immune_mediated_diseases_num'].astype(bool).astype(int)   # 非0 → 1，0 → 0
+    df['Metabolic_diseases_num'] = df.apply(lambda x: cnt_diseases_nums(x, Metabolic_diseases_ICD10), axis=1)
+    df['Metabolic_cate'] = df['Metabolic_diseases_num'].astype(bool).astype(int)
     # chronic_diseases, chronic_num = zip(*rst)
     # df['chronic_diseases'] = pd.Series(chronic_diseases)
-    df['chronic_num'] = pd.Series(chronic_num)
+
+    df_Medicine_intake = pd.read_csv(data_path + "Medicine_intake/" +"Medicine_intake.csv", usecols=['eid', 'antidepressant', 'antipsychotics'])
 
     df_100045 = pd.read_csv(path + "Cate_100045_filtered.csv")
     print("df_100045: {}".format(df_100045.shape[0]))
-    df = reduce(lambda left, right: pd.merge(left, right, on=['eid'], how='inner'), [df, df_100045])
+    df = reduce(lambda left, right: pd.merge(left, right, on=['eid'], how='inner'), [df, df_100045, df_Medicine_intake])
     df['Drug'] = df.apply(lambda x: drug_intake(x), axis=1)
     for col in ['2050-0.0', '2060-0.0', '2070-0.0', '2080-0.0']:
         df[col] = df[col] - 1  # 1, 2, 3, 4 -> 0, 1, 2, 3  item -> Score
