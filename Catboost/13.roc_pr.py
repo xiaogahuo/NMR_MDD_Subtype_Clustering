@@ -164,9 +164,9 @@ def generate_sens_speci(exp_Name, model_name, f):
                     AUC, precision, sensitivity, specificity, Acc, F1_score), file=f)
 
 def generate_dataset(exp_Name, model_name, f):
-    generate_roc_pr(exp_Name, model_name, ['#222222', 'r'])
+    # generate_roc_pr(exp_Name, model_name, ['#222222', 'r'])
     generate_sens_speci(exp_Name, model_name, f)
-    generate_loss_curve(exp_Name, model_name, ['#222222', 'r'])
+    # generate_loss_curve(exp_Name, model_name, ['#222222', 'r'])
 
 
 if __name__ == "__main__":
@@ -175,13 +175,11 @@ if __name__ == "__main__":
                "catboost_TRL_L", "catboost_VLDL", "catboost_HDL", "catboost_LDL", "catboost_IDL",
                "catboost_C", "catboost_TG", "catboost_PL", "catboost_CE", "catboost_FC", "catboost_L",
                "catboost_P", "catboost_Size", "catboost_Total", "catboost_FA"]
-    f = open(result_path + "UK_biobank_sensi_speci.csv", "w")
+    # f = open(result_path + "UK_biobank_sensi_speci.csv", "w")
+    f = open(result_path + "UK_biobank_sensi_speci_Drug.csv", "w")
     header_str = "exp_Name,model_name,d_type,AUC,precision,sensitivity,specificity,Acc,F1_score"
     print(header_str, file=f)
     for model_name in m_names:
-        # generate_dataset("cluster1_vs_0", model_name, f)
-        # generate_dataset("cluster2_vs_0", model_name, f)
-        # generate_dataset("cluster3_vs_0", model_name, f)
         print(model_name, "="*50)
         # generate_dataset("cluster123_vs_0", model_name, f)
         # generate_dataset("cluster1_vs_other", model_name, f)
@@ -191,17 +189,34 @@ if __name__ == "__main__":
         # generate_dataset("NO_Chronic_cluster1_vs_other", model_name, f)
         # generate_dataset("NO_Chronic_cluster2_vs_other", model_name, f)
         # generate_dataset("NO_Chronic_cluster3_vs_other", model_name, f)
-
-        generate_dataset("Male_cluster123_vs_0", model_name, f)
-        generate_dataset("Male_cluster1_vs_other", model_name, f)
-        generate_dataset("Male_cluster2_vs_other", model_name, f)
-        generate_dataset("Male_cluster3_vs_other", model_name, f)
-        generate_dataset("Female_cluster123_vs_0", model_name, f)
-        generate_dataset("Female_cluster1_vs_other", model_name, f)
-        generate_dataset("Female_cluster2_vs_other", model_name, f)
-        generate_dataset("Female_cluster3_vs_other", model_name, f)
-        generate_dataset("BMI_cluster123_vs_0", model_name, f)
-        generate_dataset("BMI_cluster1_vs_other", model_name, f)
-        generate_dataset("BMI_cluster2_vs_other", model_name, f)
-        generate_dataset("BMI_cluster3_vs_other", model_name, f)
+        #
+        # generate_dataset("Male_cluster123_vs_0", model_name, f)
+        # generate_dataset("Male_cluster1_vs_other", model_name, f)
+        # generate_dataset("Male_cluster2_vs_other", model_name, f)
+        # generate_dataset("Male_cluster3_vs_other", model_name, f)
+        # generate_dataset("Female_cluster123_vs_0", model_name, f)
+        # generate_dataset("Female_cluster1_vs_other", model_name, f)
+        # generate_dataset("Female_cluster2_vs_other", model_name, f)
+        # generate_dataset("Female_cluster3_vs_other", model_name, f)
+        # generate_dataset("BMI_cluster123_vs_0", model_name, f)
+        # generate_dataset("BMI_cluster1_vs_other", model_name, f)
+        # generate_dataset("BMI_cluster2_vs_other", model_name, f)
+        # generate_dataset("BMI_cluster3_vs_other", model_name, f)
+        #
+        # generate_dataset("immune_mediated_cluster123_vs_0", model_name,f)
+        # generate_dataset("immune_mediated_cluster1_vs_other", model_name, f)
+        # generate_dataset("immune_mediated_cluster2_vs_other", model_name, f)
+        # generate_dataset("immune_mediated_cluster3_vs_other", model_name, f)
+        # generate_dataset("Metabolic_cluster123_vs_0", model_name, f)
+        # generate_dataset("Metabolic_cluster1_vs_other", model_name, f)
+        # generate_dataset("Metabolic_cluster2_vs_other", model_name, f)
+        # generate_dataset("Metabolic_cluster3_vs_other", model_name, f)
+        generate_dataset("Drug_cluster123_vs_0", model_name, f)
+        generate_dataset("Drug_cluster1_vs_other", model_name, f)
+        generate_dataset("Drug_cluster2_vs_other", model_name, f)
+        generate_dataset("Drug_cluster3_vs_other", model_name, f)
+        # generate_dataset("3excluded_cluster123_vs_0", model_name, f)
+        # generate_dataset("3excluded_cluster1_vs_other", model_name, f)
+        # generate_dataset("3excluded_cluster2_vs_other", model_name, f)
+        # generate_dataset("3excluded_cluster3_vs_other", model_name, f)
 

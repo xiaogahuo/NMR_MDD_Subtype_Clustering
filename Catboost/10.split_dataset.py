@@ -35,16 +35,13 @@ def cross_valid_exp(df, exp_Name, clu_list, hc_list):
 if __name__ == '__main__':
     rst_file = result_path + "{}/{}_components_cluster_rst_{}.csv".format("NMF", 2, 3)
     df_Y = pd.read_csv(rst_file, low_memory=False, usecols=['eid', 'final_cluster'])
-    df_MDD = pd.read_csv(data_path + "Diag_MDD.csv", low_memory=False)
-    df_MDD = pd.merge(df_MDD, df_Y, on='eid', how='inner')
-
-    df_NC = pd.read_csv(data_path + "Diag_NC.csv", low_memory=False)
-    df_NC['final_cluster'] = 0
-    df = pd.concat([df_MDD, df_NC], ignore_index=True)
-
-    # # cross_valid_exp(df.copy(), 'cluster1_vs_0', [1], [0])
-    # # cross_valid_exp(df.copy(), 'cluster2_vs_0',[2], [0])
-    # # cross_valid_exp(df.copy(), 'cluster3_vs_0', [3], [0])
+    # df_MDD = pd.read_csv(data_path + "Diag_MDD.csv", low_memory=False)
+    # df_MDD = pd.merge(df_MDD, df_Y, on='eid', how='inner')
+    #
+    # df_NC = pd.read_csv(data_path + "Diag_NC.csv", low_memory=False)
+    # df_NC['final_cluster'] = 0
+    # df = pd.concat([df_MDD, df_NC], ignore_index=True)
+    #
     # cross_valid_exp(df.copy(), 'cluster123_vs_0', [1,2,3], [0])
     # cross_valid_exp(df.copy(), 'cluster1_vs_other', [1], [0,2,3])
     # cross_valid_exp(df.copy(), 'cluster2_vs_other', [2], [0,1,3])
@@ -67,9 +64,49 @@ if __name__ == '__main__':
     # cross_valid_exp(df_Female.copy(), 'Female_cluster1_vs_other', [1], [0, 2, 3])
     # cross_valid_exp(df_Female.copy(), 'Female_cluster2_vs_other', [2], [0, 1, 3])
     # cross_valid_exp(df_Female.copy(), 'Female_cluster3_vs_other', [3], [0, 1, 2])
+    #
+    # df_BMI = df[df['BMI_cate'].isin(['BMI1', 'BMI3'])]
+    # cross_valid_exp(df_BMI.copy(), 'BMI_cluster123_vs_0', [1, 2, 3], [0])
+    # cross_valid_exp(df_BMI.copy(), 'BMI_cluster1_vs_other', [1], [0, 2, 3])
+    # cross_valid_exp(df_BMI.copy(), 'BMI_cluster2_vs_other', [2], [0, 1, 3])
+    # cross_valid_exp(df_BMI.copy(), 'BMI_cluster3_vs_other', [3], [0, 1, 2])
 
-    df_BMI = df[df['BMI_cate'].isin(['BMI1', 'BMI3'])]
-    cross_valid_exp(df_BMI.copy(), 'BMI_cluster123_vs_0', [1, 2, 3], [0])
-    cross_valid_exp(df_BMI.copy(), 'BMI_cluster1_vs_other', [1], [0, 2, 3])
-    cross_valid_exp(df_BMI.copy(), 'BMI_cluster2_vs_other', [2], [0, 1, 3])
-    cross_valid_exp(df_BMI.copy(), 'BMI_cluster3_vs_other', [3], [0, 1, 2])
+    # df_MDD = pd.read_csv(data_path + "Diag_immune_mediated_MDD.csv", low_memory=False)
+    # df_MDD = pd.merge(df_MDD, df_Y, on='eid', how='inner')
+    # df_NC = pd.read_csv(data_path + "Diag_immune_mediated_NC.csv", low_memory=False)
+    # df_NC['final_cluster'] = 0
+    # df = pd.concat([df_MDD, df_NC], ignore_index=True)
+    # cross_valid_exp(df.copy(), 'immune_mediated_cluster123_vs_0', [1,2,3], [0])
+    # cross_valid_exp(df.copy(), 'immune_mediated_cluster1_vs_other', [1], [0,2,3])
+    # cross_valid_exp(df.copy(), 'immune_mediated_cluster2_vs_other', [2], [0,1,3])
+    # cross_valid_exp(df.copy(), 'immune_mediated_cluster3_vs_other', [3], [0,1,2])
+    #
+    # df_MDD = pd.read_csv(data_path + "Diag_Metabolic_MDD.csv", low_memory=False)
+    # df_MDD = pd.merge(df_MDD, df_Y, on='eid', how='inner')
+    # df_NC = pd.read_csv(data_path + "Diag_Metabolic_NC.csv", low_memory=False)
+    # df_NC['final_cluster'] = 0
+    # df = pd.concat([df_MDD, df_NC], ignore_index=True)
+    # cross_valid_exp(df.copy(), 'Metabolic_cluster123_vs_0', [1, 2, 3], [0])
+    # cross_valid_exp(df.copy(), 'Metabolic_cluster1_vs_other', [1], [0, 2, 3])
+    # cross_valid_exp(df.copy(), 'Metabolic_cluster2_vs_other', [2], [0, 1, 3])
+    # cross_valid_exp(df.copy(), 'Metabolic_cluster3_vs_other', [3], [0, 1, 2])
+
+    df_MDD = pd.read_csv(data_path + "Diag_Drug_excluded_MDD.csv", low_memory=False)
+    df_MDD = pd.merge(df_MDD, df_Y, on='eid', how='inner')
+    df_NC = pd.read_csv(data_path + "Diag_Drug_excluded_NC.csv", low_memory=False)
+    df_NC['final_cluster'] = 0
+    df = pd.concat([df_MDD, df_NC], ignore_index=True)
+    cross_valid_exp(df.copy(), 'Drug_cluster123_vs_0', [1, 2, 3], [0])
+    cross_valid_exp(df.copy(), 'Drug_cluster1_vs_other', [1], [0, 2, 3])
+    cross_valid_exp(df.copy(), 'Drug_cluster2_vs_other', [2], [0, 1, 3])
+    cross_valid_exp(df.copy(), 'Drug_cluster3_vs_other', [3], [0, 1, 2])
+
+    # df_MDD = pd.read_csv(data_path + "Diag_3excluded_MDD.csv", low_memory=False)
+    # df_MDD = pd.merge(df_MDD, df_Y, on='eid', how='inner')
+    # df_NC = pd.read_csv(data_path + "Diag_3excluded_NC.csv", low_memory=False)
+    # df_NC['final_cluster'] = 0
+    # df = pd.concat([df_MDD, df_NC], ignore_index=True)
+    # cross_valid_exp(df.copy(), '3excluded_cluster123_vs_0', [1, 2, 3], [0])
+    # cross_valid_exp(df.copy(), '3excluded_cluster1_vs_other', [1], [0, 2, 3])
+    # cross_valid_exp(df.copy(), '3excluded_cluster2_vs_other', [2], [0, 1, 3])
+    # cross_valid_exp(df.copy(), '3excluded_cluster3_vs_other', [3], [0, 1, 2])

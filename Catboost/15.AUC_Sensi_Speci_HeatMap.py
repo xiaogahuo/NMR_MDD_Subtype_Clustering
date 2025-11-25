@@ -23,6 +23,7 @@ def plot_heatmap(file_name, sheet_name):
 
 
 if __name__ == '__main__':
-    for file in ['UKB', 'DPUK']:
-        for sheet in ['main', 'Chornic', 'Female', 'Male', 'BMI']:
+    # for file in ['UKB', 'DPUK']:
+    for file in ['UKB']:
+        for sheet in ['main', 'Chornic', 'Female', 'Male', 'BMI', 'Metabolic', 'immune_mediated', 'drug', '3_excluded']:
             plot_heatmap(file, sheet)

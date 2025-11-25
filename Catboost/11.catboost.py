@@ -4,6 +4,7 @@ import csv
 import shap
 
 def run_cat(exp_Name, model_name, cols, n_estimators, class_weights):
+    print("{}:{}".format(exp_Name, model_name))
     for fold in range(5):
         X_train = pd.read_csv(data_path + "cross_valid/{}/{}/X_train.csv".format(fold, exp_Name))[cols]
         X_test = pd.read_csv(data_path + "cross_valid/{}/{}/X_test.csv".format(fold, exp_Name))[cols]
@@ -56,9 +57,27 @@ if __name__ == '__main__':
               C, TG, PL, CE, FC, L, P, Size, Total, FA]
 
     for model_name, cols in zip(m_names, cols_l):
-        # # run_cat("cluster1_vs_0", model_name, cols, 200, {NC:1, MDD:40})
-        # # run_cat("cluster2_vs_0", model_name, cols, 200, {NC:1, MDD:40})
-        # # run_cat("cluster3_vs_0", model_name, cols, 250, {NC:1, MDD:40})
+        print(model_name, "=" * 50)
+        # run_cat("immune_mediated_cluster123_vs_0", model_name, cols, 700, {NC:1, MDD:20})
+        # run_cat("immune_mediated_cluster1_vs_other", model_name, cols, 500, {NC:1, MDD:40})
+        # run_cat("immune_mediated_cluster2_vs_other", model_name, cols, 500, {NC:1, MDD:40})
+        # run_cat("immune_mediated_cluster3_vs_other", model_name, cols, 500, {NC:1, MDD:40})
+        #
+        # run_cat("Metabolic_cluster123_vs_0", model_name, cols, 700, {NC: 1, MDD: 20})
+        # run_cat("Metabolic_cluster1_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
+        # run_cat("Metabolic_cluster2_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
+        # run_cat("Metabolic_cluster3_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
+
+        run_cat("Drug_cluster123_vs_0", model_name, cols, 700, {NC: 1, MDD: 20})
+        run_cat("Drug_cluster1_vs_other", model_name, cols, 500, {NC: 1, MDD: 50})
+        run_cat("Drug_cluster2_vs_other", model_name, cols, 500, {NC: 1, MDD: 120})
+        run_cat("Drug_cluster3_vs_other", model_name, cols, 500, {NC: 1, MDD: 60})
+        #
+        # run_cat("3excluded_cluster123_vs_0", model_name, cols, 700, {NC: 1, MDD: 20})
+        # run_cat("3excluded_cluster1_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
+        # run_cat("3excluded_cluster2_vs_other", model_name, cols, 500, {NC: 1, MDD: 200})
+        # run_cat("3excluded_cluster3_vs_other", model_name, cols, 500, {NC: 1, MDD: 70})
+        #
         # run_cat("cluster123_vs_0", model_name, cols, 700, {NC:1, MDD:20})
         # run_cat("cluster1_vs_other", model_name, cols, 500, {NC:1, MDD:40})
         # run_cat("cluster2_vs_other", model_name, cols, 500, {NC:1, MDD:40})
@@ -68,19 +87,19 @@ if __name__ == '__main__':
         # run_cat("NO_Chronic_cluster1_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
         # run_cat("NO_Chronic_cluster2_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
         # run_cat("NO_Chronic_cluster3_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
-
-        run_cat("Male_cluster123_vs_0", model_name, cols, 700, {NC: 1, MDD: 20})
-        run_cat("Male_cluster1_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
-        run_cat("Male_cluster2_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
-        run_cat("Male_cluster3_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
-
-        run_cat("Female_cluster123_vs_0", model_name, cols, 700, {NC: 1, MDD: 20})
-        run_cat("Female_cluster1_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
-        run_cat("Female_cluster2_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
-        run_cat("Female_cluster3_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
-
-        run_cat("BMI_cluster123_vs_0", model_name, cols, 700, {NC: 1, MDD: 20})
-        run_cat("BMI_cluster1_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
-        run_cat("BMI_cluster2_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
-        run_cat("BMI_cluster3_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
+        #
+        # run_cat("Male_cluster123_vs_0", model_name, cols, 700, {NC: 1, MDD: 20})
+        # run_cat("Male_cluster1_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
+        # run_cat("Male_cluster2_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
+        # run_cat("Male_cluster3_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
+        #
+        # run_cat("Female_cluster123_vs_0", model_name, cols, 700, {NC: 1, MDD: 20})
+        # run_cat("Female_cluster1_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
+        # run_cat("Female_cluster2_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
+        # run_cat("Female_cluster3_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
+        #
+        # run_cat("BMI_cluster123_vs_0", model_name, cols, 700, {NC: 1, MDD: 20})
+        # run_cat("BMI_cluster1_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
+        # run_cat("BMI_cluster2_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
+        # run_cat("BMI_cluster3_vs_other", model_name, cols, 500, {NC: 1, MDD: 40})
 
